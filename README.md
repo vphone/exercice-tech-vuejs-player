@@ -12,6 +12,8 @@ Cette page devra aussi comporter :
 
 Pour le rendu visuel de la page, nous laissons libre cours à votre imagination.
 
+L'exercice devra être rendu avec la soumission d'une pull request sur ce repo Github.
+
 Bonne chance 😀
 
 ----------
