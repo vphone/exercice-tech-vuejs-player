@@ -1,8 +1,9 @@
 <template>
   <div v-if="this.streamUrl">
-    <Overlay
+    <Information
       :title="title"
       :description="description"
+      :poster-url="posterUrl"
     />
     <Video
       :stream-url="streamUrl"
@@ -13,12 +14,12 @@
 
 <script>
 import Video from '@/components/Video.vue'
-import Overlay from '@/components/Overlay.vue'
+import Information from '@/components/Information.vue'
 import { getPlayerDatas } from '@/api/player';
 
 export default {
   name: 'App',
-  components: { Video, Overlay },
+  components: { Video, Information },
   data() {
     return {
       streamUrl: null,
