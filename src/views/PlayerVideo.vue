@@ -1,0 +1,40 @@
+<template>
+  <div v-if="this.streamUrl">
+    <Overlay
+      :title="title"
+      :description="description"
+    />
+    <Video
+      :stream-url="streamUrl"
+      :poster-url="posterUrl"
+    />
+  </div>
+</template>
+
+<script>
+import Video from '@/components/Video.vue'
+import Overlay from '@/components/Overlay.vue'
+import { getPlayerDatas } from '@/api/player';
+
+export default {
+  name: 'App',
+  components: { Video, Overlay },
+  data() {
+    return {
+      streamUrl: null,
+      posterUrl: null,
+      title: null,
+      description: null,
+    }
+  },
+  mounted() {
+    getPlayerDatas().then(response => {
+      const datas = response.data;
+      this.streamUrl = datas.stream.url;
+      this.posterUrl = datas.overlay.image_bundle.poster_tv.source.url;
+      this.title = datas.overlay.title;
+      this.description = datas.overlay.description;
+    });
+  },
+}
+</script>
