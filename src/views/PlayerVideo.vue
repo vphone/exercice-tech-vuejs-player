@@ -1,14 +1,22 @@
 <template>
   <div v-if="this.streamUrl">
-    <Information
-      :title="title"
-      :description="description"
-      :poster-url="posterUrl"
-    />
-    <Video
-      :stream-url="streamUrl"
-      :poster-url="posterUrl"
-    />
+  <b-container>
+    <b-row>
+      <b-col>
+        <Information
+          :title="title"
+          :description="description"
+          :poster-url="posterUrl"
+        />
+      </b-col>
+      <b-col>
+        <Video
+          :stream-url="streamUrl"
+          :poster-url="posterUrl"
+        />
+      </b-col>
+    </b-row>
+  </b-container>
   </div>
 </template>
 
